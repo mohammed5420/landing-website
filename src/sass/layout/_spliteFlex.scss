@@ -1,0 +1,14 @@
+.split {
+  @include flexbox(row, space-evenly);
+  flex-wrap: wrap;
+  gap: 4rem;
+  min-height: 76.8rem;
+  margin-bottom: 8rem;
+
+  &__img {
+      max-width: 40rem; 
+      img {
+          width: 100%;
+      }
+  }
+}

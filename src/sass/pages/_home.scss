@@ -1,0 +1,719 @@
+//==========Home Page==========//
+// 1- All Home Page section Styles -//
+// 2- Media Queries -//
+
+/// landing section
+.landing-section {
+  position: relative;
+  min-height: calc(100vh - 7rem);
+  margin-bottom: 8rem;
+  .landing {
+    @include flexbox(row, space-evenly);
+    margin: 0 auto;
+    padding: 2rem;
+
+    &__cta {
+      .sup-header {
+        display: flex;
+        @include flexbox(row, flex-start);
+        align-items: center;
+        width: fit-content;
+        background-color: #dbdbdb;
+        padding: 0 2rem 0 0;
+        border-radius: 100rem;
+        color: $primary-dark;
+        font-size: $paragraph;
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+
+        .correct {
+          display: inline-block;
+          height: 2rem;
+          margin-right: 0.5rem;
+        }
+      }
+      .hero-heading {
+        font-size: $hero-heading;
+        margin-bottom: 1rem;
+        color: $primary-dark;
+        text-transform: capitalize;
+        max-width: 38rem;
+      }
+      .sub-header {
+        margin-bottom: 2rem;
+        @extend %paragraph;
+        max-width: 32rem;
+      }
+    }
+    &__img {
+      img {
+        max-height: 50rem;
+        height: calc(80vh);
+        animation: swim 3s ease-in-out infinite alternate;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    html {
+      font-size: 60%;
+    }
+    .landing {
+      flex-direction: column;
+      margin-top: 8rem;
+      .sup-header {
+        margin: 0 auto;
+      }
+      .hero-heading {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .sub-header {
+        margin: 0 auto 2rem;
+        text-align: center;
+      }
+      &__cta {
+        margin-bottom: 4rem;
+        .cta-btn {
+          @include flexbox(row, center);
+        }
+      }
+    }
+  }
+}
+.back-img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+}
+.city-img {
+  position: absolute;
+  height: 14rem;
+  width: 100vw;
+  margin: 0 calc(-50vw + 50%);
+  bottom: 0;
+  z-index: -2;
+}
+
+// trusted by section
+.trusted-by {
+  margin: 0 auto 8rem;
+  padding: 0 2rem;
+  max-width: 80rem;
+  &__title {
+    font-size: $paragraph;
+    text-transform: capitalize;
+    color: $primary-dark;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  &__companies {
+    @include flexbox(row, space-around);
+
+    img {
+      width: 12%;
+    }
+  }
+}
+
+// Features section
+.Features {
+  @include flexbox(row, space-around);
+  padding: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 8rem;
+
+  &__img {
+    max-width: 40rem;
+    img {
+      width: 100%;
+      animation: Blaterflay 3s ease-in-out infinite alternate;
+    }
+  }
+
+  &__info {
+    &--title {
+      margin-bottom: 4rem;
+      h2 {
+        @extend %primary-heading;
+        max-width: 25rem;
+      }
+      p {
+        max-width: 44rem;
+        @extend %paragraph;
+      }
+    }
+    &--tools {
+      .cards-container {
+        @include flexbox(column, center);
+        gap: 4rem;
+      }
+    }
+  }
+}
+
+// smartJack section
+
+.smart {
+  margin-bottom: 8rem;
+  //min-height: 100vh;
+
+  &__heading {
+    @include flexbox(row, center);
+    flex-wrap: wrap;
+    max-width: 90rem;
+    margin: 0 auto 8rem;
+
+    &--hero {
+      position: relative;
+      @extend %primary-heading;
+      margin: 0 3rem 0 0;
+
+      //border-right: solid 0.2rem $primary-light;
+      max-width: 42rem;
+      padding-right: 2rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 0.2rem;
+        background-color: #f5f7fa;
+        //border-bottom: solid 0.2rem rgba($primary-light, 0.4);
+      }
+    }
+    &--sub {
+      @extend %paragraph;
+      max-width: 42rem;
+    }
+  }
+  &__details {
+    .cards-container {
+      @include flexbox(row, space-evenly);
+      flex-wrap: wrap;
+      gap: 4rem;
+      .card {
+        max-width: 25rem;
+      }
+    }
+  }
+}
+
+//build section
+
+.build {
+  &__img {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-in-out;
+    img {
+      animation: Blaterflay 3s ease-in-out infinite alternate;
+    }
+  }
+  &__info {
+    max-width: 30rem;
+    &--title {
+      @extend %primary-heading;
+    }
+    &--body {
+      @extend %paragraph;
+      margin-bottom: 2rem;
+    }
+  }
+}
+// Choose section style
+.choose {
+  min-height: 76.8rem;
+  margin-bottom: 8rem;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    &--title {
+      @extend %primary-heading;
+      margin: 0 auto;
+      max-width: 34rem;
+    }
+    &--body {
+      @extend %paragraph;
+      margin: 0 auto;
+      max-width: 50rem;
+    }
+  }
+  &__tools {
+    padding: 0 2rem;
+
+    .cards-container {
+      gap: 2rem;
+      .card {
+        width: 33rem;
+      }
+    }
+  }
+}
+// Ultimate section style
+.ultimate {
+  &__img {
+    img {
+      animation: Blaterflay 3s ease-in-out infinite alternate;
+    }
+  }
+
+  &__info {
+    max-width: 44rem;
+    &--title {
+      margin-bottom: 4rem;
+      h2 {
+        @extend %primary-heading;
+        max-width: 26rem;
+      }
+      p {
+        max-width: 44rem;
+        @extend %paragraph;
+      }
+    }
+    &--tools {
+      margin-bottom: 2rem;
+      .cards-container {
+        @include flexbox(row, center);
+        gap: 4rem;
+        .card {
+          max-width: 20rem;
+        }
+      }
+    }
+  }
+}
+
+//Payment section style
+
+.payment {
+  margin-bottom: 8rem;
+  &__title {
+    max-width: 60rem;
+    margin: 0 auto 4rem;
+    text-align: center;
+    .title-header {
+      @extend %primary-heading;
+    }
+    .title-body {
+      @extend %paragraph;
+    }
+  }
+  &__triger {
+    padding: 0.2rem;
+    border-radius: 40rem;
+    margin: 0 auto 4rem;
+    border: solid 0.2rem #f5f7fa;
+    @include flexbox(row, space-between);
+    gap: 2rem;
+    max-width: fit-content;
+    .triger {
+      font-size: $secondary-heading;
+      color: $primary-light;
+      text-transform: capitalize;
+      font-weight: bold;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+    }
+    .triger-active {
+      background-color: $primary-blue;
+
+      color: #fff;
+      border-radius: 40rem;
+    }
+  }
+  &__container {
+    @include flexbox(row, center);
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    &__card {
+      width: 28rem;
+      border-radius: 0.8rem;
+      box-shadow: 0.1rem 0 2.4rem rgba($primary-light, 0.2);
+      text-align: center;
+      transform-style: preserve-3d;
+
+      &:hover {
+        border: solid 0.2rem #e2e4e7;
+        transform: scale(1.03);
+      }
+      &-tilte {
+        border-radius: 0.8rem 0.8rem 0 0;
+        padding: 2rem;
+        background-image: linear-gradient(180deg, #fff, #f5f7fa);
+        .card-price {
+          margin-bottom: 0.8rem;
+          .price-mount {
+            font-size: 6rem;
+            color: $primary-dark;
+            font-weight: bolder;
+          }
+          .price-per {
+            @extend %paragraph;
+          }
+        }
+        .card-type {
+          @extend %primary-heading;
+          margin-bottom: 1rem;
+        }
+        .card-discrype {
+          @extend %paragraph;
+        }
+      }
+      &-list {
+        padding: 2rem;
+        .card-list {
+          &-item {
+            list-style-type: none;
+            @extend %paragraph;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+          }
+        }
+      }
+      &-cta {
+        border-radius: 0 0 0.8rem 0.8rem;
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+//Clients Section Style 
+
+.Clients {
+  @include flexbox(row, space-evenly);
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-bottom: 8rem;
+
+  &__img {
+    max-width: 50rem;
+    img {
+      width: 100%;
+    }
+  }
+  &__main {
+    max-width: 40rem;
+    &-title {
+      margin-bottom: 2rem;
+      .title-header {
+        @extend %primary-heading;
+        max-width: 35rem;
+      }
+      .title-body {
+        @extend %paragraph;
+      }
+    }
+    &-rate {
+      .rate {
+        margin-bottom: 2rem;
+        & > * + * {
+          margin-left: 0.8rem;
+        }
+        img {
+          max-width: 2rem;
+        }
+      }
+      .info {
+        .info-title {
+          @extend %primary-heading;
+          font-size: $secondary-heading;
+          max-width: 50rem;
+        }
+        .info-body {
+          @extend %paragraph;
+        }
+      }
+      .founders {
+        @include flexbox(row, space-between);
+        margin-top: 2rem;
+        &__container {
+          .employ-card {
+            @include flexbox(row, space-evenly);
+            animation: cardAnimation 0.3s ease-in-out backwards;
+            gap: 2rem;
+            &__img {
+              max-width: 6rem;
+            }
+            &__info {
+              text-align: start;
+              .info-name {
+                font-size: $paragraph;
+                color: $primary-dark;
+                text-transform: capitalize;
+                margin-bottom: 0.5rem;
+              }
+              .info-job {
+                @extend %paragraph;
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+        &__controls {
+          @include flexbox(row, center);
+          gap: 2rem;
+          div {
+            position: relative;
+            width: 4rem;
+            height: 4rem;
+            padding: 2rem;
+            border-radius: 50%;
+            background-color: #e2e4e7;
+            text-align: center;
+            cursor: pointer;
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 70%;
+            }
+          }
+          .controls-left {
+            &::after {
+              content: "";
+              position: absolute;
+              width: 0.3rem;
+              background-color: #f5f7fa;
+              height: 90%;
+              top: 50%;
+              transform: translateY(-50%);
+              right: -1.1rem;
+              border-radius: 50rem;
+            }
+            img {
+              transform: translate(-50%, -50%) rotate(180deg);
+            }
+          }
+          .disable {
+            background-color: transparent;
+            border: solid 0.2rem #f5f7fa;
+            color: #f5f7fa;
+
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Faq section style
+
+.faq {
+  padding: 2rem;
+  margin-bottom: 8rem;
+  &__title {
+    text-align: center;
+    margin: 0 auto 4rem;
+    max-width: 50rem;
+    .title-header {
+      @extend %primary-heading;
+    }
+    .title-body {
+      @extend %paragraph;
+    }
+  }
+  &__qa {
+    max-width: 90rem;
+    margin: 0 auto;
+    .question-container {
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      border-radius: 0.6rem;
+      padding: 2rem;
+      background-color: #f5f7fa;
+      .question {
+        @extend %paragraph;
+        color: $primary-dark;
+        text-transform: capitalize;
+        margin-bottom: 2rem;
+      }
+      .answer {
+        @extend %paragraph;
+      }
+      .toggle {
+        z-index: 99;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+        width: 2rem;
+      }
+    }
+  }
+}
+// Download section style
+.download {
+  position: relative;
+  @include flexbox(row, space-around);
+  padding: 2rem 2rem 0;
+  flex-wrap: wrap;
+  &__info {
+    padding-bottom: 2rem;
+    max-width: 40rem;
+    .info {
+      &-header {
+        @extend %primary-heading;
+        margin-bottom: 2rem;
+        max-width: 40rem;
+      }
+      &-body {
+        @extend %paragraph;
+        margin-bottom: 2rem;
+      }
+    }
+    .links {
+      @include flexbox(row, flex-start);
+      flex-wrap: wrap;
+      img {
+        max-width: 15rem;
+        width: 100%;
+        cursor: pointer;
+      }
+      gap: 4rem;
+    }
+  }
+  &__img {
+    img {
+      position: absolute;
+      max-width: 50rem;
+      height: 28.2rem;
+      width: 100%;
+      right: 0;
+      bottom: -3.8rem;
+      z-index: 99;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (min-width: 2240px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media screen and (min-width: 2840px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 334px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media screen and (max-width: 985px) {
+  .smart {
+    &__heading {
+      flex-direction: column;
+      text-align: center;
+
+      &--hero {
+        margin-bottom: 3rem;
+        border-right: 0;
+        padding-right: 0;
+        padding-bottom: 2rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: auto;
+          bottom: 0;
+          width: 70%;
+          transform: translateX(-50%);
+          height: 0.2rem;
+          background-color: #f5f7fa;
+        }
+      }
+    }
+  }
+  .download {
+    @include flexbox(column, center);
+    gap: 28.6rem;
+    &__info {
+      .links {
+        @include flexbox(row, center);
+      }
+    }
+    &__img {
+      img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .Features {
+    &__info {
+      text-align: center;
+      &--title {
+        h2 {
+          margin: 0 auto 2rem;
+        }
+      }
+    }
+  }
+  .ultimate {
+    @include flexbox(row, center);
+    &__info {
+      text-align: center;
+      &--title {
+        h2 {
+          margin: 0 auto 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 756px) {
+  .build {
+    &__info {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 956px) {
+  .Clients {
+    &__main {
+      text-align: center;
+      &-title {
+        margin-bottom: 2rem;
+        .title-header {
+          margin: 0 auto 2rem;
+        }
+      }
+    }
+  }
+}
+

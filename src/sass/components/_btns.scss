@@ -1,0 +1,91 @@
+.btn {
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 1.2rem 2.8rem;
+  background-color: $primary-blue;
+  color: white;
+  border-radius: 100rem;
+  font-size: $paragraph;
+  transition: all 0.3s ease-in-out;
+  border: none;
+
+  
+
+  &:hover ,&:focus {
+    background-color: lighten($primary-blue, 4);
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+  &:visited {
+    background-color: darken($primary-blue, 1);
+  }
+}
+.btn--text {
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 1.2rem 2.8rem;
+  color: $primary-blue;
+  border-radius: 100rem;
+  font-size: $paragraph;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.cards-container {
+    @include flexbox(row, center);
+    flex-wrap: wrap;
+
+  .horizon {
+    @include flexbox(row , space-evenly);
+  }
+  .center {
+    @include flexbox(column, center);
+        text-align: center;
+  }
+  .card {
+    max-width: 40rem;
+    &__img {
+      max-width: 6rem;
+      margin-right: 2rem;
+      img {
+        width: 100%;
+      }
+    }
+    &__info {
+      &--title {
+        font-size: $secondary-heading;
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+        color: $primary-dark;
+      }
+      .card__info--title-red {
+        color: $secondary-red;
+      }
+      .card__info--title-blue {
+        color: $secondary-blue;
+      }
+      .card__info--title-green {
+        color: $secondary-green;
+      }
+      &--body {
+        font-size: $paragraph;
+        color: $primary-light;
+        max-width: 28rem;
+      }
+    }
+    // &:hover  {
+    //   // transition: all .2s ease-out;
+    //   // transform: translateY(-3rem) scale(1.3);
+    // }
+    
+  }
+}
+

@@ -1,0 +1,16 @@
+.u-upper-case {
+    text-transform: uppercase;
+}
+.animateRight {
+    animation: animateRight .9s ease-in backwards;
+}
+.animateLeft {
+    animation: animateLeft .9s ease-in backwards;
+}
+
+.animateTop {
+    animation: animateTop .9s ease-in backwards;
+}
+.animateBottom {
+    animation: animateBottom .9s ease-in backwards;
+}

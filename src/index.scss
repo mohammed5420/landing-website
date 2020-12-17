@@ -1,0 +1,22 @@
+// import Base files
+@import './sass/base/base';
+@import './sass/base/animations';
+@import './sass/base/typography';
+@import './sass/base/utillities';
+
+// import Abstracts  files
+@import './sass/abstracts/mixsins';
+@import './sass/abstracts/variabls';
+@import './sass/abstracts/functions';
+
+// import Components Files
+@import './sass/components/btns';
+
+// import Components Files
+@import './sass/layout/header';
+@import './sass/layout/footer';
+@import './sass/layout/spliteFlex';
+
+//importing Pages
+
+@import './sass/pages/home';
